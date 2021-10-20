@@ -55,12 +55,50 @@ users = {
 }
 
 # 1. Get Jonathan's Twitter handle (i.e. the string `"jonnyt"`)
+print(users['Jonathan']['twitter'])
 # 2. Get Erik's hometown
+print(users['Erik']['home_town'])
 # 3. Get the array of Erik's lottery numbers
+print(users['Erik']['lottery_numbers'])
 # 4. Get the species of Avril's pet Monty
+# print(users['Avril']['pets'][0]['species']) RELIES ON INDEX, BELOW IS BETTER
+for pet in users['Avril']['pets']:
+  if pet['name'] == 'monty':
+    print(pet['species'])
 # 5. Get the smallest of Erik's lottery numbers
+lotto_low = users['Erik']['lottery_numbers'][0]
+for number in users['Erik']['lottery_numbers']:
+  if number < lotto_low:
+    lotto_low = number
+
+print(lotto_low)
+
 # 6. Return an array of Avril's lottery numbers that are even
+
+def find_lotto_even(ls):
+  lotto_even = []
+  for number in ls:
+    if number % 2 == 0:
+      lotto_even.append(number)
+  return lotto_even
+
+print(find_lotto_even(users['Avril']['lottery_numbers']))
+
+
 # 7. Erik is one lottery number short! Add the number `7` to be included in his lottery numbers
+users['Erik']['lottery_numbers'].append(7)
+print(users['Erik']['lottery_numbers'])
+
 # 8. Change Erik's hometown to Edinburgh
+users['Erik']['home_town'] = 'Edinburgh'
+print(users['Erik']['home_town'])
+
 # 9. Add a pet dog to Erik called "Fluffy"
-# 10. Add another person to the users dictionary
+users['Erik']['pets'].append({'name':'Fluffy', 'species':'dog'})
+print(users['Erik']['pets'])
+
+# 10. Add another person to the users dictionary WIP
+
+users['Martin'] = {"twitter": "TheFonz270", "lottery_numbers": [1, 2, 3, 4, 5, 6], "home_town": "Edinburgh", "pets": [{"name": "Snapps","species": "cat"}]}
+
+# print(users)
