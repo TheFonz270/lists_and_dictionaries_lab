@@ -74,11 +74,13 @@ for number in numbers:
 
 print(total)
 
+numbers2 = [5, 13, 2]
+
 total2 = 0
-for idx, number in enumerate(numbers):
-    if number == 13 or numbers[idx-1] == 13:
+for idx, number in enumerate(numbers2):
+    if number == 13 or numbers2[idx-1] == 13:
         pass
     else:
         total2 += number
 
-print(total)
+print(total2)
