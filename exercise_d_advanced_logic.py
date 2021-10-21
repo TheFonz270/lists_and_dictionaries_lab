@@ -62,8 +62,23 @@ print(total)
 #    So [5, 13, 2] would have sum of 5. 
 
 
+stopped = False
+total = 0
+for number in numbers:
+    if number == 13:
+        stopped = True
+    elif stopped == True:
+        stopped = False
+    else:
+        total += number
 
+print(total)
 
+total2 = 0
+for idx, number in enumerate(numbers):
+    if number == 13 or numbers[idx-1] == 13:
+        pass
+    else:
+        total2 += number
 
-
-
+print(total)
